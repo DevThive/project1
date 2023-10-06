@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      // script.js
+      $(".content").click(function () {
+        $(".content").toggleClass("heart-active");
+        $(".text").toggleClass("heart-active");
+        $(".numb").toggleClass("heart-active");
+        $(".heart").toggleClass("heart-active");
+      });
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import {
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import {
+        getDocs,
+        doc,
+        count,
+        getCountFromServer,
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+      // Firebase 구성 정보 설정
+      const firebaseConfig = {
+        apiKey: "AIzaSyD6AvglKAL3qW2jR46aZXVBT5PtGFqfh-4",
+        authDomain: "sparta-94f20.firebaseapp.com",
+        projectId: "sparta-94f20",
+        storageBucket: "sparta-94f20.appspot.com",
+        messagingSenderId: "616741352088",
+        appId: "1:616741352088:web:73ed988c6b8ef4184bd6ed",
+        measurementId: "G-MFETGLLRMX",
+      };
+
+      // Firebase 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      $("#heart-btn").click(async function () {
+        let like = "good";
+
+        let doc = {
+          like: like,
+        };
+        await addDoc(collection(db, "likes"), doc);
+        console.log("저장됨");
+        window.location.reload();
+      });
+
+      //const coll = collection(db, "likes");
+      //const snapshot = await getCountFromServer(coll);
+
+      //console.log(snapshot._data.count.integerValue);
+
+      let docs = await getDocs(collection(db, "likes"));
+      console.log(docs._snapshot.docChanges.length);
+      docs.forEach((a) => {
+        const like_num = docs._snapshot.docChanges.length;
+
+        $("#like-count").text(like_num);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="heart-btn" id="heart-btn">
+      <div class="content">
+        <span class="heart"></span>
+        <span class="text">Like</span>
+        <span class="like-count" id="like-count"></span>
+      </div>
+    </div>
+  </body>
+</html>
