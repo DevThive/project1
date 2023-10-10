@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>인천연합</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Hi+Melody&display=swap');
+		html, body{
+			padding: 0;
+			margin: 0;
+			height: 95%;
+		}
+		#toMain{
+			border: 0;
+			border-radius: 5px;
+			background-color: transparent;
+			font-size: 20px;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+		}
+		#toMain:hover{
+			background-color: yellow;
+			text-decoration: underline;
+		}
+		p{
+			text-indent: 15px;
+		}
+		#title{
+			font-family: 궁서;
+			font-size: 50px;
+		}
+		body{
+			background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("incheon.jpeg") no-repeat 50% 50%;
+		}
+		#body{
+			font-family: 'Gaegu', cursive;
+			padding: 80px;
+			font-size: 40px;
+			line-height: 1.3;
+		}
+	</style>
+</head>
+<body>
+	<button id="toMain" onclick="location.href='index.html'">◁ 메인으로</button>
+	<!-- location.href에 메인화면 링크 넣기 -->
+	<div style="text-align: center;">
+		<p id="title">인 천 연 합</p>
+	</div>
+	<div>
+		<p id="body"> 안녕하세요, 인천연합입니다. 팀원들 중 다수가 인천 출신이라서 팀 이름을 인천연합으로 지었습니다. 저희는 개발자가 되기 위한 5명의 조원이 같이 부족한 부분을 채워나가면서 발전하는 팀입니다.
+		</p>
+	</div>
+</body>
+</html>

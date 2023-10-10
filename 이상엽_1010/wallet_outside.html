@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>인천연합</title>
+	<style>
+		html, body{
+			padding: 0;
+			margin: 0;
+			height: 100%;
+		}
+		#wallet{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-image: url('wallet.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+		#wallet:hover{
+			background-image: url('https://media.tenor.com/owdY3LF7G9gAAAAi/wallet-attention.gif');
+		}
+		#anywhere{
+			width: 500px;
+			font-family: 굴림;
+			font-size: 40px;
+			color: skyblue;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
+	<script>
+		$(document).ready(() => {
+			$('#wallet').click(() => {
+				alert("인천연합에 오신 것을 환영합니다.");
+			});
+		});
+	</script>
+</head>
+<body>
+	<a id="wallet" href="index.html">
+		<p id="anywhere">아무 곳이나 클릭하세요!</p>
+	</a>	
+	<!-- href에 메인화면 링크 넣기 -->
+</body>
+</html>
