@@ -30,6 +30,7 @@ const member1 = ref(db, "member/one/likes");
 const member2 = ref(db, "member/two/likes");
 const member3 = ref(db, "member/three/likes");
 const member4 = ref(db, "member/four/likes");
+const member5 = ref(db, "member/five/likes");
 
 //1번째
 onValue(member1, (snapshot) => {
@@ -112,3 +113,26 @@ onValue(member4, (snapshot) => {
   });
   $("#like-count4").text(num);
 });
+
+onValue(member5, (snapshot) => {
+  let num = snapshot.val();
+  console.log(num);
+
+  function writedata() {
+    const db = getDatabase();
+
+    set(ref(db, "member/five"), {
+      likes: num + 1,
+    });
+    //window.location.reload();
+  }
+
+  //4번째 버튼
+  $("#heart-btn5").click(async function () {
+    writedata();
+    //likeNum();
+  });
+  $("#like-count5").text(num);
+});
+
+//각 이미지 사진 가져오기
