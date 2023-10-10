@@ -12,7 +12,8 @@
   cursor: pointer;
 }
 
-/*.content.heart-active {
+/*
+  .content.heart-active {
   border-color: #f9b9c4;
   background: #fbd0d8;
 }*/
@@ -38,7 +39,7 @@
 
 .heart:active {
   animation-direction: alternate;
-  animation: animate 0.1s steps(28) 1;
+  animation: animate 0.3s steps(28) 1;
 }
 @keyframes animate {
   0% {
