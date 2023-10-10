@@ -34,6 +34,32 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
+
+
+
+        ////////////////// 팀원 프로필 데이터 가져오기 //////////////////
+        
+        const querySnapshot = await getDocs(collection(db, "profile"));
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            let profile_id = doc.id;
+            $('#name_'+profile_id).text(doc.data()['name']);
+            $('#content_'+profile_id).text(doc.data()['comment']);
+
+            /* 그 밖의 데이터별 가져오기 참고 자료
+
+                doc.data()['name']   : 이름
+                doc.data()['age']    : 나이
+                doc.data()['blog']   : 블로그 주소
+                doc.data()['comment']: 각오   
+                doc.data()['hobby']  : 취미
+                doc.data()['mbti']   : mbti
+            */
+        });
+
+        ///////////////// 팀원 프로필 데이터 가져오기 끝 ////////////////////
+
         //////////////////////// 팀원 사진 가져오기 //////////////////////////
 
         // Create a reference with an initial file path and name
@@ -57,6 +83,8 @@
                     const img_name_fin = img_name.split('/')[4];
 
                     const img_name_id = img_name_fin.split('.')[0];
+
+                    console.log('img_name_fin:'+img_name_id);
 
 
                     //팀원 사진 가져오기
@@ -165,8 +193,8 @@
                     <img id="img_dongha" width="500" height="350" class="card-img-top" alt="...">
                     <input type="file" id="Upload_dongha" accept="image/*" style="display:none;" />
                     <div class="card-body">
-                        <h5 class="card-title">동하님</h5>
-                        <p class="card-text">앨범 내용</p>
+                        <h5 id="name_dongha" class="card-title">동하님</h5>
+                        <p  id="content_dongha" class="card-text">앨범 내용</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">앨범 날짜</small>
@@ -178,8 +206,8 @@
                     <img id="img_minjae" width="500" height="350" class="card-img-top" alt="...">
                     <input type="file" id="Upload_minjae" accept="image/*" style="display:none;" />
                     <div class="card-body">
-                        <h5 class="card-title">민재님</h5>
-                        <p class="card-text">앨범 내용</p>
+                        <h5 id="name_minjae" class="card-title">민재님</h5>
+                        <p id="content_minjae" class="card-text">앨범 내용</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">앨범 날짜</small>
@@ -191,8 +219,8 @@
                     <img id="img_sangyup" width="500" height="350" class="card-img-top" alt="...">
                     <input type="file" id="Upload_sangyup" accept="image/*" style="display:none;" />
                     <div class="card-body">
-                        <h5 class="card-title">상엽님</h5>
-                        <p class="card-text">앨범 내용</p>
+                        <h5 id="name_sangyup" class="card-title">상엽님</h5>
+                        <p id="content_sangyup" class="card-text">앨범 내용</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">앨범 날짜</small>
@@ -204,8 +232,8 @@
                     <img id="img_beomsuk" width="500" height="350" class="card-img-top" alt="...">
                     <input type="file" id="Upload_beomsuk" accept="image/*" style="display:none;" />
                     <div class="card-body">
-                        <h5 class="card-title">범석님</h5>
-                        <p class="card-text">앨범 내용</p>
+                        <h5 id="name_beomsuk" class="card-title">범석님</h5>
+                        <p id="content_beomsuk" class="card-text">앨범 내용</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">앨범 날짜</small>
@@ -217,8 +245,8 @@
                     <img id="img_changmin" width="500" height="350" class="card-img-top" alt="...">
                     <input type="file" id="Upload_changmin" accept="image/*" style="display:none;" />
                     <div class="card-body">
-                        <h5 class="card-title">창민님</h5>
-                        <p class="card-text">앨범 내용</p>
+                        <h5 id="name_changmin" class="card-title">창민님</h5>
+                        <p id="content_changmin" class="card-text">앨범 내용</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">앨범 날짜</small>
