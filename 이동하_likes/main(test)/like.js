@@ -10,14 +10,14 @@ import {
 
 // Firebase 구성 정보 설정
 const firebaseConfig = {
-  apiKey: "AIzaSyD6AvglKAL3qW2jR46aZXVBT5PtGFqfh-4",
-  authDomain: "sparta-94f20.firebaseapp.com",
-  databaseURL: "https://sparta-94f20-default-rtdb.firebaseio.com",
-  projectId: "sparta-94f20",
-  storageBucket: "sparta-94f20.appspot.com",
-  messagingSenderId: "616741352088",
-  appId: "1:616741352088:web:73ed988c6b8ef4184bd6ed",
-  measurementId: "G-MFETGLLRMX",
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  apiKey: "AIzaSyCqf-kJQ65YyBIK5xpiMrlrb_EREBO02AE",
+  authDomain: "nimiproj.firebaseapp.com",
+  projectId: "nimiproj",
+  storageBucket: "nimiproj.appspot.com",
+  messagingSenderId: "724453522213",
+  appId: "1:724453522213:web:e77b7678a3fbb4bb3a78cc",
+  measurementId: "G-8MQLKXV5SZ",
 };
 
 // Firebase 인스턴스 초기화
