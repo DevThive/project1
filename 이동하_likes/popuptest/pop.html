@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Modal</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <button data-modal-target="#modal">Open Modal</button>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">자세히보기</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="layer_background">
+          <label for="layer_businessCard"> </label>
+
+          <div id="businessCard">
+            <table id="businessCard_data">
+              <td><div id="profile_photo"></div></td>
+              <td>
+                <div id="profile_data">
+                  <table id="profile_data_table">
+                    <tr>
+                      <td>이름: 르탄이</td>
+                      <td>나이: 300</td>
+                    </tr>
+                    <tr>
+                      <td>취미: 코딩</td>
+                      <td>MBTI: HTML</td>
+                    </tr>
+                  </table>
+                  <p style="font-size: 25px; margin-left: 20px">
+                    This is Sparta!
+                  </p>
+                </div>
+              </td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+  </body>
+</html>
