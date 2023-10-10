@@ -20,16 +20,15 @@ import {
 
 // Firebase 구성 정보 설정
 const firebaseConfig = {
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   apiKey: "AIzaSyCqf-kJQ65YyBIK5xpiMrlrb_EREBO02AE",
   authDomain: "nimiproj.firebaseapp.com",
+  databaseURL: "https://nimiproj-default-rtdb.firebaseio.com",
   projectId: "nimiproj",
   storageBucket: "nimiproj.appspot.com",
   messagingSenderId: "724453522213",
   appId: "1:724453522213:web:e77b7678a3fbb4bb3a78cc",
-  measurementId: "G-8MQLKXV5SZ",
-};
-
+  measurementId: "G-8MQLKXV5SZ"
+  };
 // Firebase 인스턴스 초기화
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
