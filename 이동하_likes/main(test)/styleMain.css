@@ -180,3 +180,45 @@ img {
   opacity: 1;
   pointer-events: all;
 }
+
+h1,
+ul {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+hr {
+  margin: 0 30px;
+}
+
+td {
+  width: 450px;
+}
+
+h2 {
+  color: black;
+}
+
+.profile {
+  background-color: white;
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 65%;
+
+  text-align: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin-top: -100px;
+}
+
+.text {
+  color: grey;
+  text-align: left;
+  font-size: 1.2em;
+  list-style: none;
+}
